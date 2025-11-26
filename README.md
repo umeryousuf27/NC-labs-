@@ -1,11 +1,11 @@
 # Numerical Methods Laboratory
-## Lab 1: Root Finding & Lab 2: Interpolation
+## Labs 1-5: Complete Implementation
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![NumPy](https://img.shields.io/badge/NumPy-1.20+-orange.svg)](https://numpy.org/)
 [![Matplotlib](https://img.shields.io/badge/Matplotlib-3.3+-green.svg)](https://matplotlib.org/)
 
-Complete implementation of numerical methods for root finding and polynomial interpolation, prepared as a comprehensive lab submission.
+Complete implementation of numerical methods covering root finding, interpolation, numerical integration, differential equations, and linear systems.
 
 ---
 
@@ -14,6 +14,9 @@ Complete implementation of numerical methods for root finding and polynomial int
 - [Overview](#overview)
 - [Lab 1: Root Finding Methods](#lab-1-root-finding-methods)
 - [Lab 2: Interpolation Methods](#lab-2-interpolation-methods)
+- [Lab 3: Numerical Integration](#lab-3-numerical-integration)
+- [Lab 4: Differential Equations (ODE Solvers)](#lab-4-differential-equations)
+- [Lab 5: Linear Systems](#lab-5-linear-systems)
 - [Installation](#installation)
 - [Usage](#usage)
 - [File Structure](#file-structure)
@@ -117,7 +120,100 @@ Implementation of polynomial interpolation techniques:
 
 ---
 
-## 🚀 Installation
+## � Lab 3: Numerical Integration
+
+Implementation of numerical integration techniques for approximating definite integrals:
+
+### 1. Basic Integration Rules
+
+**Trapezoidal Rule**
+- Approximates area with trapezoids
+- Error: O(h²)
+- Simple and reliable
+
+**Simpson's 1/3 Rule**
+- Uses parabolic approximation
+- Error: O(h⁴)
+- More accurate than trapezoidal
+
+**Simpson's 3/8 Rule**
+- Uses cubic polynomial
+- Useful for 3-segment divisions
+
+### 2. Newton-Cotes Formulas
+- Degree 0: Midpoint Rule
+- Degree 1: Trapezoidal Rule
+- Degree 2: Simpson's 1/3 Rule
+
+### 3. Composite Methods
+- **Composite Trapezoidal**: Divides interval into n subintervals
+- **Composite Simpson's 1/3**: Requires even n
+- **Composite Midpoint**: Uses midpoint of each subinterval
+
+---
+
+## 🔄 Lab 4: Differential Equations
+
+Numerical methods for solving ODEs: dy/dx = f(x,y) with y(x₀) = y₀
+
+### 1. Euler's Method
+- **Order:** 1
+- **Formula:** y_{n+1} = y_n + h·f(x_n, y_n)
+- **Pros:** Simple
+- **Cons:** Least accurate
+
+### 2. Midpoint Method (RK2)
+- **Order:** 2
+- **Uses:** Slope at midpoint
+- **More accurate** than Euler
+
+### 3. Modified Euler Method
+- **Order:** 2
+- **Type:** Predictor-corrector
+- **Two evaluations** per step
+
+### 4. Heun's Method
+- **Order:** 2
+- **Iterative corrector**
+- **More accurate** with iterations
+
+### 5. Runge-Kutta 4th Order (RK4)
+- **Order:** 4
+- **Industry standard**
+- **Best accuracy** for most problems
+- **Four evaluations** per step
+
+---
+
+## 📐 Lab 5: Linear Systems
+
+Methods for solving A·x = b:
+
+### 1. LU Decomposition (Doolittle)
+- **Type:** Direct method
+- **Decomposes:** A = L·U
+- **Process:** 
+  1. Decompose A into L (lower) and U (upper)
+  2. Solve L·y = b (forward substitution)
+  3. Solve U·x = y (backward substitution)
+- **Exact** (within machine precision)
+
+### 2. Jacobi Iterative Method
+- **Type:** Iterative
+- **Updates:** All components simultaneously
+- **Converges:** If diagonally dominant
+- **Can be parallelized**
+
+### 3. Gauss-Seidel Iterative Method
+- **Type:** Iterative
+- **Updates:** Uses latest values immediately
+- **Faster** than Jacobi typically
+- **Converges:** If diagonally dominant
+- **Sequential** updates
+
+---
+
+## �🚀 Installation
 
 ### Prerequisites
 - Python 3.8 or higher
@@ -154,6 +250,21 @@ python lab1_root_finding.py
 **Lab 2 - Interpolation:**
 ```bash
 python lab2_interpolation.py
+```
+
+**Lab 3 - Numerical Integration:**
+```bash
+python lab3_integration.py
+```
+
+**Lab 4 - ODE Solvers:**
+```bash
+python lab4_ode_methods.py
+```
+
+**Lab 5 - Linear Systems:**
+```bash
+python lab5_linear_systems.py
 ```
 
 ### Option 2: Use Jupyter Notebook (Recommended)
@@ -202,15 +313,19 @@ print(f"P(2.5) = {poly(2.5):.4f}")
 ```
 NC-labs-/
 │
-├── lab1_root_finding.py      # Root finding methods implementation
-├── lab2_interpolation.py     # Interpolation methods implementation
-├── lab_demo.ipynb            # Jupyter notebook with complete demonstrations
-├── requirements.txt          # Python package dependencies
-├── README.md                 # This file
+├── lab1_root_finding.py          # Root finding methods
+├── lab2_interpolation.py         # Interpolation methods
+├── lab3_integration.py           # Numerical integration
+├── lab4_ode_methods.py           # ODE solvers
+├── lab5_linear_systems.py        # Linear system solvers
+├── lab_demo.ipynb                # Labs 1 & 2 demonstrations
+├── numerical_methods_lab3_4_5.ipynb  # Labs 3, 4, 5 demonstrations
+├── requirements.txt              # Python dependencies
+├── README.md                     # This file
 │
 └── (Generated outputs)
-    ├── plots/                # Saved plots and figures
-    └── results/              # Numerical results and tables
+    ├── plots/                    # Saved plots and figures
+    └── results/                  # Numerical results and tables
 ```
 
 ---

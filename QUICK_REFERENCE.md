@@ -3,6 +3,64 @@
 
 ---
 
+## 🔢 Lab 3: Numerical Integration
+
+### Basic Rules
+- **Trapezoidal:** $I \approx \frac{h}{2}[f(a) + f(b)]$
+- **Simpson's 1/3:** $I \approx \frac{h}{3}[f(a) + 4f(\frac{a+b}{2}) + f(b)]$
+- **Simpson's 3/8:** $I \approx \frac{3h}{8}[f(x_0) + 3f(x_1) + 3f(x_2) + f(x_3)]$
+
+### Composite Rules
+- **Composite Trapezoidal:** $I \approx \frac{h}{2}[f(x_0) + 2\sum_{i=1}^{n-1}f(x_i) + f(x_n)]$
+- **Composite Simpson's 1/3:** $I \approx \frac{h}{3}[f(x_0) + 4\sum_{odd}f(x_i) + 2\sum_{even}f(x_i) + f(x_n)]$
+
+---
+
+## 🔄 Lab 4: ODE Solvers
+
+Problem: $\frac{dy}{dx} = f(x,y), \quad y(x_0) = y_0$
+
+### Methods
+1. **Euler (Order 1):**
+   $y_{n+1} = y_n + h f(x_n, y_n)$
+
+2. **Midpoint (Order 2):**
+   $k_1 = f(x_n, y_n)$
+   $k_2 = f(x_n + \frac{h}{2}, y_n + \frac{h}{2}k_1)$
+   $y_{n+1} = y_n + h k_2$
+
+3. **Modified Euler (Order 2):**
+   $k_1 = f(x_n, y_n)$
+   $k_2 = f(x_n + h, y_n + h k_1)$
+   $y_{n+1} = y_n + \frac{h}{2}(k_1 + k_2)$
+
+4. **Runge-Kutta 4 (Order 4):**
+   $k_1 = f(x_n, y_n)$
+   $k_2 = f(x_n + \frac{h}{2}, y_n + \frac{h}{2}k_1)$
+   $k_3 = f(x_n + \frac{h}{2}, y_n + \frac{h}{2}k_2)$
+   $k_4 = f(x_n + h, y_n + h k_3)$
+   $y_{n+1} = y_n + \frac{h}{6}(k_1 + 2k_2 + 2k_3 + k_4)$
+
+---
+
+## 📐 Lab 5: Linear Systems
+
+Problem: $A\mathbf{x} = \mathbf{b}$
+
+### Direct Methods
+- **LU Decomposition:** $A = LU$
+  1. Solve $L\mathbf{y} = \mathbf{b}$ (Forward)
+  2. Solve $U\mathbf{x} = \mathbf{y}$ (Backward)
+
+### Iterative Methods
+- **Jacobi:**
+  $x_i^{(k+1)} = \frac{1}{a_{ii}}(b_i - \sum_{j \neq i} a_{ij}x_j^{(k)})$
+
+- **Gauss-Seidel:**
+  $x_i^{(k+1)} = \frac{1}{a_{ii}}(b_i - \sum_{j < i} a_{ij}x_j^{(k+1)} - \sum_{j > i} a_{ij}x_j^{(k)})$
+
+---
+
 ## 🔍 Lab 1: Root Finding Methods
 
 ### When to Use Each Method
