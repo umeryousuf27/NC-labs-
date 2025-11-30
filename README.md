@@ -37,11 +37,6 @@ This repository contains complete Python implementations of fundamental numerica
 - ✅ Visualizations and plots
 - ✅ Example applications
 
-**Model Used:** Claude 4.5 / Gemini  
-**Date:** November 2025
-
----
-
 ## 🔍 Lab 1: Root Finding Methods
 
 Implementation of five numerical methods for solving equations of the form **f(x) = 0**:
