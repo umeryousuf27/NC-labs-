@@ -207,6 +207,20 @@ Implementation of numerical integration techniques for approximating definite in
 - Simpson's 1/3 is the **most commonly used** method
 - Trade-off between **accuracy and computational cost**
 
+### Visualizations
+
+![Trapezoidal Rule](plots/lab3_trapezoidal.png)
+*Figure 3.1: Visualization of the Trapezoidal Rule (n=8).*
+
+![Midpoint Rule](plots/lab3_midpoint.png)
+*Figure 3.2: Visualization of the Midpoint Rule (n=8).*
+
+![Simpson's Rule](plots/lab3_simpsons.png)
+*Figure 3.3: Visualization of Simpson's 1/3 Rule (n=8).*
+
+![Error Analysis](plots/lab3_error_analysis.png)
+*Figure 3.4: Error vs Number of Subintervals for different methods.*
+
 ---
 
 ## 🔄 Lab 4: Ordinary Differential Equations (ODE Solvers)
@@ -272,6 +286,17 @@ Numerical methods for solving initial value problems: dy/dx = f(x,y) with y(x₀
 - **Smaller step sizes** improve accuracy for all methods
 - **RK4** is worth the extra computational cost for most applications
 
+### Visualizations
+
+![ODE Solutions](plots/lab4_ode_solutions.png)
+*Figure 4.1: Comparison of ODE solution methods against the exact solution.*
+
+![Error Comparison](plots/lab4_error_comparison.png)
+*Figure 4.2: Error comparison of different methods (log scale).*
+
+![Step Size Effect](plots/lab4_step_size_effect.png)
+*Figure 4.3: Effect of step size on RK4 error.*
+
 ---
 
 ## 📐 Lab 5: Linear Systems
@@ -336,6 +361,14 @@ x + 4y + z = 7
 - **Iterative methods** require diagonal dominance for convergence
 - **Direct methods** are better for small to medium systems
 - **Iterative methods** are better for large sparse systems
+
+### Visualizations
+
+![Jacobi vs Gauss-Seidel](plots/lab5_jacobi_vs_gauss_seidel.png)
+*Figure 5.1: Convergence comparison between Jacobi and Gauss-Seidel methods.*
+
+![Jacobi Components](plots/lab5_jacobi_components.png)
+*Figure 5.2: Convergence of individual components in Jacobi method.*
 
 ---
 
@@ -471,6 +504,8 @@ Jacobi            ███████████████ 15 iterations
 
                   Faster ←→ Slower
 ```
+
+
 
 ---
 
